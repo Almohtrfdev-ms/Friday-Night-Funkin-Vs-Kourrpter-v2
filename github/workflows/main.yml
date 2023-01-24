@@ -1,1 +1,18 @@
-#
+# This is basic workflow to help you get started with actions
+
+name: build
+
+# controls when the action will run.
+on:
+# Triggers the workflow on push or pull request events but only for the master branch
+push:
+branches: [main]
+pull_request:
+branches: [main]
+
+#Allows you to run this workflow manually from the Actions tab
+workflow_dispatch:
+
+# A workflow run is made upof one or more jobs that can run seqentially or in parallel
+jobs:
+#this workflow
