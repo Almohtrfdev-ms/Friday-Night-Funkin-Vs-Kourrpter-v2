@@ -13,6 +13,20 @@ branches: [main]
 #Allows you to run this workflow manually from the Actions tab
 workflow_dispatch:
 
-# A workflow run is made upof one or more jobs that can run seqentially or in parallel
+# A workflow run is made up of one or more jobs that can run seqentially or in parallel
 jobs:
-#this workflow
+#this workflow contains a single job called "build"
+buildWindows:
+runs-on: windows-latest
+
+steps:
+# Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+-uses: actions/checkout@v2.3.0
+
+-uses:krdlab/setup-haxe@master
+with:
+haxs-version: 4.2.5
+#runa a set of commands using the runners shell
+-name: Install Haxelib
+run: |
+haxelib setup c:/haxelib
